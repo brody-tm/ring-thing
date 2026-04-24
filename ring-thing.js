@@ -17,10 +17,15 @@ function getNeighboringMembers(url) {
 
     const firstInList = members[0] == url;
     const lastInList = members[members.length - 1] == url;
+    const onlyOneInList = firstInList && lastInList;
 
     var previousMember, nextMember;
 
-    if (firstInList) {
+    if (onlyOneInList) {
+        previousMember = members[0];
+        nextMember = members[0];
+    }
+    else if (firstInList) {
         previousMember = members[members.length - 1];
         nextMember = members[members.indexOf(url) + 1];
     }
@@ -36,7 +41,7 @@ function getNeighboringMembers(url) {
     return [previousMember, nextMember];
 }
 
-function createWidget(neighboringMembers) {
+function createWidget(neighboringMembers = ["", ""]) {
     var previousMember = neighboringMembers[0];
     var nextMember = neighboringMembers[1];
 
