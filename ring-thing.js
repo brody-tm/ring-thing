@@ -6,7 +6,7 @@ const members = [
 ];
 
 // replace with the url of your webring's icon - wherever its hosted
-const iconURL = "../img.png";
+const iconURL = "https://github.com/brody-tm/ring-thing/blob/main/img.png?raw=true";
 
 // you don't really have to mess with anything from this point on
 
